@@ -1,0 +1,10 @@
+{
+  "name": "@aymfx-ui/utils",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {},
+  "peerDependencies": {
+    "vue": "^3.3.11",
+    "element-plus": "^2.5.1"
+  }
+}
