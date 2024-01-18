@@ -8,7 +8,7 @@ import {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: 'aymfx-ui',
+  base: '/aymfx-ui/',
   title: 'aymfx-ui',
   description: '基于element-plus开发的组件库文档',
   markdown: {
