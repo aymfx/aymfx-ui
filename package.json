@@ -10,10 +10,10 @@
     "UI",
     "Vue3"
   ],
-  "homepage": "https://github.com/aymfx/2024-aymfxui",
+  "homepage": "https://aymfx.github.io/aymfx-ui/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aymfx/2024-aymfxui"
+    "url": "https://github.com/aymfx/aymfx-ui"
   },
   "files": [
     "dist"
