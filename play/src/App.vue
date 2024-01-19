@@ -1,27 +1,45 @@
-<script setup lang="ts">
-import { AuButton } from '../../dist/es/aymfx-ui.js'
-</script>
-
 <template>
-  <div>
-    <h1>app</h1>
-    <au-button>测试了</au-button>
-  </div>
+  <AuToggleableFieldLayout>
+    <el-form :inline="true" :model="formInline" class="demo-form-inline">
+      <el-form-item label="Approved by">
+        <el-input v-model="formInline.user" placeholder="Approved by" clearable />
+      </el-form-item>
+      <el-form-item label="Activity zone">
+        <el-select v-model="formInline.region" placeholder="Activity zone" clearable>
+          <el-option label="Zone one" value="shanghai" />
+          <el-option label="Zone two" value="beijing" />
+        </el-select>
+      </el-form-item>
+      <el-form-item label="Activity time">
+        <el-date-picker v-model="formInline.date" type="date" placeholder="Pick a date" clearable />
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="onSubmit">Query</el-button>
+      </el-form-item>
+    </el-form>
+  </AuToggleableFieldLayout>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<script lang="ts" setup>
+import { reactive } from 'vue'
+import { AuToggleableFieldLayout } from '@aymfx-ui/components';
+const formInline = reactive({
+  user: '',
+  region: '',
+  date: '',
+})
+
+const onSubmit = () => {
+  console.log('submit!')
+}
+</script>
+
+<style>
+.demo-form-inline .el-input {
+  --el-input-width: 220px;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+.demo-form-inline .el-select {
+  --el-select-width: 220px;
 }
 </style>

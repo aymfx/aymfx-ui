@@ -15,21 +15,19 @@ pnpm i aymfx-ui
 - 在入口文件中导入样式
 
 ```js
-import 'a'y'm'f'x-ui/es/style.css';
+import aymfx/es/style.css';
 ```
 
 - 使用组件
 
 ```vue
 <template>
-  <aymfxButton type="primary" :debounceWait="2000" @click="handleClick">
-    防抖按钮
-  </aymfxButton>
+  <auButton type="primary" @click="handleClick">点我</auButton>
   <div>点击{{ count }}次</div>
 </template>
 
 <script setup lang="ts">
-import { aymfxButton } from 'aymfx-ui';
+import { auxButton } from 'aymfx-ui';
 import { ref } from 'vue';
 
 const count = ref(0);

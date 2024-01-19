@@ -46,10 +46,18 @@
   },
   "peerDependencies": {
     "element-plus": "^2.5.1",
-    "vue": "^3.3.11"
+    "vue": "^3.3.11",
+    "@element-plus/icons-vue": "^2.3.1"
+  },
+  "dependencies": {
+    "element-plus": "^2.5.1",
+    "vue": "^3.3.11",
+    "@element-plus/icons-vue": "^2.3.1"
   },
   "devDependencies": {
     "@aymfx-ui/components": "workspace:*",
+    "@aymfx-ui/utils": "workspace:*",
+    "@element-plus/icons-vue": "^2.3.1",
     "@types/node": "^20.11.5",
     "@vitejs/plugin-vue": "^4.5.2",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
