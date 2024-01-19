@@ -1,0 +1,1 @@
+import{av as s,p as i,m as a,aN as t}from"./chunks/framework.2RfSxkgc.js";const y=JSON.parse('{"title":"快速开始","description":"","frontmatter":{},"headers":[],"relativePath":"guide/start.md","filePath":"guide/start.md"}'),n={name:"guide/start.md"},h=t("",10),l=[h];function k(p,e,r,E,d,g){return a(),i("div",null,l)}const c=s(n,[["render",k]]);export{y as __pageData,c as default};
