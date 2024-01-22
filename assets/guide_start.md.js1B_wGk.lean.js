@@ -1,0 +1,1 @@
+import{av as s,p as i,m as a,aN as t}from"./chunks/framework.dcLTnxza.js";const c=JSON.parse('{"title":"快速开始","description":"","frontmatter":{},"headers":[],"relativePath":"guide/start.md","filePath":"guide/start.md"}'),n={name:"guide/start.md"},h=t("",10),l=[h];function k(p,e,r,E,d,g){return a(),i("div",null,l)}const y=s(n,[["render",k]]);export{c as __pageData,y as default};
