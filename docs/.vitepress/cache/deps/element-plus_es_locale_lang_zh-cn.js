@@ -1,6 +1,6 @@
 import "./chunk-LQ2VYIYD.js";
 
-// node_modules/.pnpm/element-plus@2.5.1_vue@3.4.14/node_modules/element-plus/es/locale/lang/zh-cn.mjs
+// node_modules/.pnpm/element-plus@2.5.3_vue@3.4.15/node_modules/element-plus/es/locale/lang/zh-cn.mjs
 var zhCn = {
   name: "zh-cn",
   el: {

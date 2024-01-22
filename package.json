@@ -1,10 +1,10 @@
 {
   "name": "aymfx-ui",
+  "version": "0.0.2",
   "type": "module",
   "description": "这是基于element-plus的组件库",
   "author": "aymfx",
   "license": "MIT",
-  "version": "0.0.2",
   "keywords": [
     "Component",
     "UI",
@@ -16,19 +16,21 @@
     "url": "https://github.com/aymfx/aymfx-ui"
   },
   "files": [
+    "package.json",
+    "README.md",
     "dist"
   ],
   "sideEffects": [
     "dist/index.css"
   ],
-  "main": "./dist/umd/aymfx-ui.umd.cjs",
-  "module": "./dist/es/aymfx-ui.js",
-  "types": "./dist/types/index.d.ts",
+  "main": "./dist/aymfx-ui.umd.cjs",
+  "module": "./dist/aymfx-ui.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/es/aymfx-ui.js",
-      "require": "./dist/umd/aymfx-ui.umd.cjs",
-      "types": "./dist/types/index.d.ts"
+      "import": "./dist/aymfx-ui.js",
+      "require": "./dist/aymfx-ui.umd.cjs",
+      "types": "./dist/index.d.ts"
     },
     "./dist/": {
       "import": "./dist/",
@@ -36,28 +38,18 @@
     }
   },
   "scripts": {
-    "dev": "pnpm --filter play run dev",
-    "build": "pnpm build:es && pnpm build:umd",
-    "build:es": "vite build --config vite.es.config.ts",
-    "build:umd": "vite build --config vite.umd.config.ts",
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs"
   },
-  "peerDependencies": {
-    "element-plus": "^2.5.1",
-    "vue": "^3.3.11",
-    "@element-plus/icons-vue": "^2.3.1"
-  },
   "dependencies": {
-    "element-plus": "^2.5.1",
-    "vue": "^3.3.11",
-    "@element-plus/icons-vue": "^2.3.1"
+    "element-plus": "^2.5.3",
+    "vue": "^3.3.11"
   },
   "devDependencies": {
-    "@aymfx-ui/components": "workspace:*",
-    "@aymfx-ui/utils": "workspace:*",
-    "@element-plus/icons-vue": "^2.3.1",
     "@types/node": "^20.11.5",
     "@vitejs/plugin-vue": "^4.5.2",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
@@ -65,7 +57,7 @@
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vite-plugin-dts": "^3.7.1",
-    "vitepress": "1.0.0-rc.39",
+    "vitepress": "1.0.0-rc.40",
     "vue-tsc": "^1.8.25"
   }
 }
