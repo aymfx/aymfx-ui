@@ -11,4 +11,4 @@ description: Button 组件的文档
 
 使用 `type`、`size`来定义按钮的样式。
 
-<preview path="../demos/button/index.vue" title="基础用法" description="Button 组件的基础用法"></preview>
+<preview path="./index.vue" title="基础用法" description="Button 组件的基础用法"></preview>

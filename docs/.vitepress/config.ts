@@ -34,7 +34,7 @@ export default defineConfig({
     },
     nav: [
       { text: '指南', link: '/guide/start' },
-      { text: '组件', link: '/components/button' },
+      { text: '组件', link: '/components/button/index' },
     ],
     sidebar: {
       '/guide/': [
@@ -49,7 +49,7 @@ export default defineConfig({
         },
         {
           text: '功能增强',
-          items: [{ text: 'Button 按钮', link: '/components/button' }],
+          items: [{ text: 'Button 按钮', link: '/components/button/index' }],
         },
         {
           text: '业务组件',
@@ -57,7 +57,7 @@ export default defineConfig({
         },
         {
           text: '其他',
-          items: [],
+          items: [{ text: '图标选择器', link: '/components/icons/index' }],
         },
       ],
     },
