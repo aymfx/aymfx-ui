@@ -8,6 +8,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-essential',
   ],
+  parser: '@typescript-eslint/parser',
   overrides: [
     {
       env: {
@@ -24,7 +25,5 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['vue'],
-  rules: {
-    '@typescript-eslint/consistent-type-imports': 'error',
-  },
+  rules: {},
 };
