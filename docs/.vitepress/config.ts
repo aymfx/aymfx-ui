@@ -49,7 +49,10 @@ export default defineConfig({
         },
         {
           text: '功能增强',
-          items: [{ text: 'Button 按钮', link: '/components/button/index' }],
+          items: [
+            { text: 'Button 按钮', link: '/components/button/index' },
+            { text: '表单切换筛选项', link: '/components/form-toggle/index' },
+          ],
         },
         {
           text: '业务组件',
