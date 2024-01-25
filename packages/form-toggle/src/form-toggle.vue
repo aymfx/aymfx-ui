@@ -1,21 +1,22 @@
 <script lang="ts" setup>
-import { computed, ref } from 'vue';
-import { ElForm, ElIcon } from 'element-plus';
+import { ref } from 'vue';
+import { ElForm, ElIcon, FormInstance } from 'element-plus';
 import { CaretTop, CaretBottom } from '@element-plus/icons-vue';
 import { AuformProps } from './form-toggle.type';
 const props = defineProps(AuformProps);
-const formRef = ref<InstanceType<typeof ElForm>>()
+const formRef = ref<FormInstance>()
 const showIcon = ref(false);
 defineOptions({
   name: 'AuFormToggle',
 });
+
 defineExpose({
-  formRef
+  ref: formRef
 })
 </script>
 
 <template>
-  <el-form v-bind="$props" class="au-form-toggle">
+  <el-form ref="formRef" v-bind="$props" class="au-form-toggle">
     <slot />
     <slot name="append" v-if="showIcon"></slot>
     <el-form-item v-if="props.showBtns">

@@ -3,12 +3,8 @@ title: Button | aymfx-ui
 description: Button 组件的文档
 ---
 
-# Button 按钮
+# 按钮扩展
 
-常用的操作按钮
+## 增加扩展 防抖和节流
 
-## 基础用法
-
-使用 `type`、`size`来定义按钮的样式。
-
-<preview path="./index.vue" title="基础用法" description="Button 组件的基础用法"></preview>
+<preview path="./index.vue"></preview>

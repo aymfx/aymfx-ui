@@ -10,27 +10,36 @@ const formInline = reactive({
   origin: '',
 })
 
-const onSubmit = () => {
-  console.log('submit!')
-  ElMessage.success('提交成功')
-}
 const onReset = (formEl) => {
-  debugger
   if (!formEl) return
-  debugger
-  formEl.formRef.resetFields()
+  formEl.ref.resetFields()
+}
+
+const submitForm = (formEl) => {
+  if (!formEl) return
+  formEl.ref.validate((valid) => {
+    if (valid) {
+      ElMessage.success('submit!')
+    } else {
+      console.success('error submit!')
+      return false
+    }
+  })
 }
 </script>
 <template>
   <div>
     <au-form-toggle ref="formRef" label-width="70px" :model="formInline" :inline="true" class="demo-form-inline">
-      <el-form-item label="手机号" prop="phone">
+      <el-form-item label="手机号" prop="phone" :rules="[
+        { required: true, message: '手机号是必选' },
+        { type: 'number', message: '手机号必须为数字' },
+      ]">
         <el-input v-model="formInline.phone" placeholder="请输入" clearable />
       </el-form-item>
       <el-form-item label="会员号" prop="id">
         <el-input v-model="formInline.id" placeholder="请输入" clearable />
       </el-form-item>
-      <template v-slot:append>
+      <template #append>
         <el-form-item label="城市" prop="orgiin">
           <el-select v-model="formInline.origin" placeholder="选择区域" clearable>
             <el-option label="上海" value="shanghai" />
@@ -41,8 +50,8 @@ const onReset = (formEl) => {
           <el-date-picker v-model="formInline.date" type="date" placeholder="选择日期" clearable />
         </el-form-item>
       </template>
-      <template v-slot:btns>
-        <el-button type="primary" @click="onSubmit">查询</el-button>
+      <template #btns>
+        <el-button type="primary" @click="submitForm">查询</el-button>
         <el-button @click="onReset(formRef)">重置</el-button>
       </template>
     </au-form-toggle>
