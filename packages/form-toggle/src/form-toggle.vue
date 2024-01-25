@@ -1,23 +1,50 @@
 <script lang="ts" setup>
-import { ElForm } from 'element-plus';
+import { computed, ref } from 'vue';
+import { ElForm, ElIcon } from 'element-plus';
+import { CaretTop, CaretBottom } from '@element-plus/icons-vue';
 import { AuformProps } from './form-toggle.type';
-
 const props = defineProps(AuformProps);
-
+const formRef = ref<InstanceType<typeof ElForm>>()
+const showIcon = ref(false);
 defineOptions({
   name: 'AuFormToggle',
 });
+defineExpose({
+  formRef
+})
 </script>
 
 <template>
-  <el-form v-model="props">
-    <slot></slot>
-    <el-form-item>
-      <el-button type="primary">提交</el-button>
-      <el-button>取消</el-button>
+  <el-form v-bind="$props" class="au-form-toggle">
+    <slot />
+    <slot name="append" v-if="showIcon"></slot>
+    <el-form-item v-if="props.showBtns">
+      <slot name="btns" />
+      <p @click="showIcon = !showIcon">
+        <span v-if="showIcon" class="label">收起<el-icon class="icon">
+            <CaretTop />
+          </el-icon></span>
+        <span v-else class="label">展开<el-icon class="icon">
+            <CaretBottom />
+          </el-icon></span>
+      </p>
     </el-form-item>
   </el-form>
 </template>
 <style lang="scss" scoped>
-.au-form-toggle {}
+.au-form-toggle {
+  .label {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer
+  }
+
+  .icon {
+    margin-left: 5px;
+  }
+}
 </style>
