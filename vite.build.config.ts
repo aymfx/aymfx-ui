@@ -1,17 +1,17 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import dts from 'vite-plugin-dts';
-import eslint from 'eslint-plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), dts(), eslint()],
+  plugins: [vue(), dts()],
   resolve: {
     alias: {
       '@': '/packages',
     },
   },
   build: {
+    sourcemap: true,
     outDir: 'dist',
     // cssCodeSplit: true, // 强制内联CSS
     rollupOptions: {
